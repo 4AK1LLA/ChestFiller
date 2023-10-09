@@ -2,3 +2,6 @@ name: ChestFiller
 main: com.rustret.chestfiller.ChestFiller
 version: "1.0.0"
 api: ["1.0.0"]
+commands:
+  chestfiller:
+    usage: "/chestfiller"
