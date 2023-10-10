@@ -11,9 +11,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class OverworldFiller extends DimensionFiller {
-    private final int max = getMax();
-    private final int minY = 5;
-
     public OverworldFiller(Level level, ItemManager itemManager) {
         super(level, itemManager);
     }
@@ -22,10 +19,10 @@ public class OverworldFiller extends DimensionFiller {
     public void doFill() {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         executor.execute(() -> {
+            final int minY = 5;
             int found = 0;
-            int totalX = max * 2;
-            for (int x = -max; x <= max; x++) {
-                for (int z = -max; z <= max; z++) {
+            for (int x = -radius; x <= radius; x++) {
+                for (int z = -radius; z <= radius; z++) {
                     int maxY = level.getHighestBlockAt(x, z);
                     for (int y = minY; y <= maxY; y++) {
                         if (level.getBlock(x, y, z).getId() == Block.CHEST) {
@@ -34,7 +31,7 @@ public class OverworldFiller extends DimensionFiller {
                         }
                     }
                 }
-                double progress = ((double)(x + max) / totalX) * 100.0;
+                double progress = ((double)(x + radius) / sideLength) * 100.0;
                 logger.info(String.format("Searching for chests | Dimension: Overworld | Chests found: %d Done: %.2f%%", found, progress));
             }
 
@@ -46,11 +43,5 @@ public class OverworldFiller extends DimensionFiller {
             logger.info("ChestFiller finished successfully");
         });
         executor.shutdown();
-    }
-
-    private int getMax() {
-        int i;
-        for (i = 0; level.getBlock(i, 0, 0).getId() != Block.AIR; i++) { }
-        return i;
     }
 }

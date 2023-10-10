@@ -9,6 +9,8 @@ public class ItemManagerFactory {
         switch (level.getDimension()) {
             case Level.DIMENSION_OVERWORLD:
                 return new OverworldItems();
+            case Level.DIMENSION_NETHER:
+                return new NetherItems();
             default:
                 throw new IllegalArgumentException("Unsupported dimension: " + level.getDimension());
         }

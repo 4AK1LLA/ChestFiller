@@ -1,18 +1,11 @@
 package com.rustret.chestfiller.items;
 
-import cn.nukkit.inventory.ChestInventory;
 import cn.nukkit.item.Item;
 import cn.nukkit.item.enchantment.Enchantment;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-public class OverworldItems implements ItemManager {
-    private final List<RandomEntry> entries = new ArrayList<>();
-    private final Random random = new Random();
-
-    public OverworldItems() {
+public class OverworldItems extends ItemManager {
+    @Override
+    protected void initEntries() {
         entries.add(new RandomEntry(99, Item.AIR, 1));
 
         entries.add(new RandomEntry(25, Item.BEETROOT_SEEDS, 3));
@@ -67,24 +60,5 @@ public class OverworldItems implements ItemManager {
         entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_BOW_INFINITY));
         entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_BOW_POWER));
         entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_BOW_KNOCKBACK));
-    }
-
-    @Override
-    public void fillChest(ChestInventory inventory) {
-        int totalChance = entries.stream().mapToInt(RandomEntry::getChance).sum();
-        int slots = inventory.getSize();
-
-        for (int i = 0; i < slots; i++) {
-            int randomChance = random.nextInt(totalChance) + 1;
-            int cumulativeChance = 0;
-
-            for (RandomEntry entry : entries) {
-                cumulativeChance += entry.getChance();
-                if (randomChance <= cumulativeChance) {
-                    inventory.setItem(i, entry.createItem(random));
-                    break;
-                }
-            }
-        }
     }
 }
