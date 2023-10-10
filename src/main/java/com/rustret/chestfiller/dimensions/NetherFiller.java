@@ -21,18 +21,16 @@ public class NetherFiller extends DimensionFiller {
         executor.execute(() -> {
             final int minY = 50;
             final int maxY = 100;
-            int found = 0;
             for (int x = -radius; x <= radius; x++) {
                 for (int z = -radius; z <= radius; z++) {
                     for (int y = minY; y <= maxY; y++) {
                         if (level.getBlock(x, y, z).getId() == Block.CHEST) {
-                            found++;
                             chests.add(new Vector3(x, y, z));
                         }
                     }
                 }
                 double progress = ((double)(x + radius) / sideLength) * 100.0;
-                logger.info(String.format("Searching for chests | Dimension: Nether | Chests found: %d Done: %.2f%%", found, progress));
+                logger.info(String.format("Searching for chests | Dimension: Nether | Chests found: %d | Done: %.2f%%", chests.size(), progress));
             }
 
             logger.info("Started filling chests...");

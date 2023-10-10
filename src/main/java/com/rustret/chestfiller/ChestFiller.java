@@ -5,18 +5,11 @@ import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.level.Level;
 import cn.nukkit.plugin.PluginBase;
-import cn.nukkit.utils.MainLogger;
 import cn.nukkit.utils.TextFormat;
 import com.rustret.chestfiller.dimensions.DimensionFiller;
 import com.rustret.chestfiller.items.ItemManager;
 
 public class ChestFiller extends PluginBase {
-    @Override
-    public void onEnable() {
-        MainLogger logger = Server.getInstance().getLogger();
-        logger.info("ChestFiller enabled!");
-    }
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.isPlayer()) {

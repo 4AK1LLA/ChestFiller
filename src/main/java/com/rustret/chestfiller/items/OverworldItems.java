@@ -37,28 +37,13 @@ public class OverworldItems extends ItemManager {
         entries.add(new RandomEntry(5, Item.RECORD_CAT, 1));
         entries.add(new RandomEntry(5, Item.RECORD_OTHERSIDE, 1));
 
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_MENDING));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_DURABILITY));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_VANISHING_CURSE));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_WATER_WORKER));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_PROTECTION_EXPLOSION));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_WATER_WALKER));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_PROTECTION_FALL));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_PROTECTION_FIRE));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_PROTECTION_PROJECTILE));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_PROTECTION_ALL));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_WATER_BREATHING));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_THORNS));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_DAMAGE_ARTHROPODS));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_EFFICIENCY));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_FIRE_ASPECT));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_LOOTING));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_KNOCKBACK));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_DAMAGE_ALL));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_DAMAGE_SMITE));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_BOW_FLAME));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_BOW_INFINITY));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_BOW_POWER));
-        entries.add(new RandomEntry(5, Item.ENCHANT_BOOK, 1, Enchantment.ID_BOW_KNOCKBACK));
+        entries.add(new RandomEntry(70, Item.ENCHANT_BOOK, false, Enchantment.ID_MENDING,
+                Enchantment.ID_DURABILITY, Enchantment.ID_VANISHING_CURSE, Enchantment.ID_WATER_WORKER,
+                Enchantment.ID_PROTECTION_EXPLOSION, Enchantment.ID_WATER_WALKER, Enchantment.ID_PROTECTION_FALL,
+                Enchantment.ID_PROTECTION_FIRE, Enchantment.ID_PROTECTION_PROJECTILE, Enchantment.ID_PROTECTION_ALL,
+                Enchantment.ID_WATER_BREATHING, Enchantment.ID_THORNS, Enchantment.ID_DAMAGE_ARTHROPODS,
+                Enchantment.ID_EFFICIENCY, Enchantment.ID_FIRE_ASPECT, Enchantment.ID_LOOTING, Enchantment.ID_KNOCKBACK,
+                Enchantment.ID_DAMAGE_ALL, Enchantment.ID_DAMAGE_SMITE, Enchantment.ID_BOW_FLAME,
+                Enchantment.ID_BOW_INFINITY, Enchantment.ID_BOW_POWER, Enchantment.ID_BOW_KNOCKBACK));
     }
 }

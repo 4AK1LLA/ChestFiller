@@ -11,6 +11,8 @@ public class ItemManagerFactory {
                 return new OverworldItems();
             case Level.DIMENSION_NETHER:
                 return new NetherItems();
+            case Level.DIMENSION_THE_END:
+                return new TheEndItems();
             default:
                 throw new IllegalArgumentException("Unsupported dimension: " + level.getDimension());
         }
